@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MorseMind – Letter Practice</title>
+  <link rel="stylesheet" href="letters.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Level 1: Morse Letter Training</h1>
+    <p class="instruction">Press the spacebar to input the Morse code for the following letter:</p>
+    
+    <div class="letter-box">
+      <span id="current-letter">A</span>
+    </div>
+
+    <div id="tap-prompt" class="tap-prompt">Begin tapping for: <strong>A</strong></div>
+
+    <div class="morse-display">
+      <p><strong>Expected:</strong> <span id="expected-morse">.-</span></p>
+      <p><strong>Your Input:</strong> <span id="user-morse"></span></p>
+    </div>
+
+    <div class="feedback" id="feedback-msg">Waiting for your input...</div>
+
+    <div class="controls">
+      <button onclick="prevLetter()">Previous</button>
+      <button onclick="nextLetter()">Next</button>
+      <button onclick="resetInput()">Reset</button>
+    </div>
+  </div>
+
+  <script src="letters.js"></script>
+</body>
+</html>

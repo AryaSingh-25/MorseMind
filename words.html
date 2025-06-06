@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MorseMind – Words</title>
+  <link rel="stylesheet" href="letters.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Level 2: Learn Words</h1>
+    <p class="instruction">Use the spacebar to enter the Morse code for the displayed word.</p>
+
+    <!-- Word Display -->
+    <div class="letter-box">
+      <span id="current-word">LOVE</span>
+    </div>
+
+    <!-- Morse Reference -->
+    <div class="morse-display">
+      <p><strong>Expected:</strong> <span id="expected-word-morse">.-.. --- ...- .</span></p>
+      <p><strong>Your Input:</strong> <span id="user-word-morse"></span></p>
+    </div>
+
+    <!-- Live Timer for Hold Duration -->
+    <div id="morse-timer" class="timer-display"></div>
+
+    <!-- Visual Prompt -->
+    <div id="tap-prompt" class="tap-prompt"></div>
+
+    <!-- Gap Timing Control -->
+    <div class="gap-control">
+      <label for="letter-gap">Letter Gap Threshold (milliseconds):</label>
+      <input
+        type="number"
+        id="letter-gap"
+        value="600"
+        min="200"
+        max="2000"
+        step="50"
+      />
+    </div>
+
+    <!-- Feedback Section -->
+    <div class="feedback" id="feedback-msg">
+      Waiting for input...
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button type="button" onclick="prevWord()">Previous Word</button>
+      <button type="button" onclick="nextWord()">Next Word</button>
+      <button type="button" onclick="resetInput()">Try Again</button>
+    </div>
+  </div>
+  
+  <script src="words.js"></script>
+</body>
+</html>

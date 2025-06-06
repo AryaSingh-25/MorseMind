@@ -1,0 +1,95 @@
+\<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MorseMind – Sentence Practice</title>
+  <link rel="stylesheet" href="letters.css" />
+</head>
+<!-- 🔒 Hidden input for Morse input focus -->
+<input type="text" id="morse-capture" autocomplete="off" style="opacity: 0; position: absolute; left: -9999px;" />
+
+<body>
+  <main class="container" role="main" aria-label="Morse code sentence practice">
+    <header>
+      <h1>Level 3: Sentence Practice</h1>
+      <p class="instruction" id="instructions">
+        Hold the <kbd>Spacebar</kbd> to enter Morse code (• = short, — = long).<br />
+        Tap slowly between letters (pause ≈ 1s).<br />
+        Press <kbd>Tab</kbd> to insert a space between words (<code>/</code>).<br />
+        Press <kbd>Enter</kbd> when you're done to evaluate your input.
+      </p>
+
+      <!-- Threshold Configuration -->
+      <div class="threshold-config">
+        <label for="letter-gap"><strong>Letter Gap Threshold (ms):</strong></label>
+        <input
+          type="number"
+          id="letter-gap"
+          min="100"
+          max="3000"
+          step="100"
+          value="1000"
+          aria-label="Customizable letter gap threshold in milliseconds"
+        />
+      </div>
+    </header>
+
+    <!-- Sentence Display Section -->
+    <section aria-labelledby="sentence-label" class="sentence-section">
+      <h2 id="sentence-label" class="visually-hidden">Sentence to translate</h2>
+      <div class="letter-box" aria-live="polite" aria-atomic="true">
+        <span id="current-sentence">HELLO WORLD</span>
+      </div>
+    </section>
+
+    <!-- Morse Code Display -->
+    <section class="morse-display" aria-live="polite" aria-atomic="true">
+      <p><strong>Expected:</strong> <span id="expected-sentence-morse">.... . .-.. .-.. --- / .-- --- .-. .-.. -..</span></p>
+      <p><strong>Your Input:</strong> <span id="user-sentence-morse" aria-live="assertive"></span></p>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="feedback" role="status" aria-live="polite">
+      <p id="feedback-msg">Please enter the Morse code for the sentence above.</p>
+      <p id="detailed-feedback-msg" style="white-space: pre-wrap; font-size: 0.9em; margin-top: 0.5em;"></p>
+    </section>
+
+    <!-- Controls -->
+    <nav class="controls" aria-label="Sentence navigation controls">
+      <button type="button" id="prev-btn" aria-label="Previous sentence" onclick="prevSentence()">Previous</button>
+      <button type="button" id="next-btn" aria-label="Next sentence" onclick="nextSentence()">Next</button>
+      <button type="button" id="reset-btn" aria-label="Reset input" onclick="resetInput()">Reset</button>
+    </nav>
+
+    <!-- Level Selection -->
+    <section class="level-selection">
+      <label for="level-select"><strong>Select Difficulty Level:</strong></label>
+      <select id="level-select" onchange="changeLevel(this.value)">
+        <option value="easy">Easy</option>
+        <option value="moderate">Moderate</option>
+        <option value="hard">Hard</option>
+      </select>
+    </section>
+
+    <!-- User Input Section -->
+    <section class="user-input-section">
+      <h2>Practice Your Own Sentence</h2>
+      <input type="text" id="custom-sentence" placeholder="Enter your sentence here" />
+      <button type="button" onclick="setCustomSentence()">Set Sentence</button>
+    </section>
+
+    <!-- Tutorial Section -->
+    <section class="tutorial-section">
+      <h2>How to Type Sentences in Morse Code</h2>
+      <p>1. Hold the <kbd>Spacebar</kbd> to input Morse code: short press for dot (•), long press for dash (—).</p>
+      <p>2. Pause between letters for approximately 1 second to separate them.</p>
+      <p>3. Pause longer (e.g., 2 seconds) between words to automatically insert a "/" separator.</p>
+      <p>4. Press <kbd>Tab</kbd> to manually insert a "/" between words if needed.</p>
+      <p>5. Press <kbd>Enter</kbd> to evaluate your input against the expected Morse code.</p>
+    </section>
+  </main>
+
+  <script src="sentences.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #1a237e;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0d47a1;
+}
+
+.instruction {
+  font-size: 1rem;
+  color: #37474f;
+  margin-bottom: 1rem;
+}
+
+.letter-box {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #263238;
+  margin: 1.5rem auto;
+}
+
+/* Refined tap prompt styling */
+.tap-prompt {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1b1f33;
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin: 1rem auto;
+  width: fit-content;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.morse-display {
+  font-size: 1rem;
+  color: #455a64;
+  margin-top: 2rem;
+  line-height: 1.6;
+}
+
+#user-morse {
+  color: #0d47a1;
+  font-weight: bold;
+}
+
+.feedback {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2e7d32;
+}
+
+.controls {
+  margin-top: 2rem;
+}
+
+button {
+  background: #1565c0;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 6px;
+  margin: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0d47a1;
+}

@@ -1,0 +1,111 @@
+/* Reset default margin and padding */
+body {
+  margin: 0;
+  padding: 3rem 1rem;
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c2c2c;
+  text-align: center;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #374151; /* Dark slate gray */
+  font-weight: 600;
+}
+
+.instruction {
+  font-size: 1.2rem;
+  color: #4b5563; /* Medium gray */
+  margin-bottom: 1rem;
+}
+
+.letter-box {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937; /* Darker text */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+.morse-display {
+  font-size: 1.2rem;
+  color: #374151;
+  margin-top: 1.5rem;
+}
+
+#user-sentence-morse {
+  color: #2563eb; /* Blue tone */
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.feedback {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #4b5563;
+  padding: 0 1rem;
+}
+
+#detailed-feedback-msg {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: #6b7280; /* Cool Gray */
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.controls {
+  margin-top: 2rem;
+}
+
+button {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  margin: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
+}
+
+button:hover,
+button:focus {
+  background-color: #1e40af;
+  outline: none;
+  box-shadow: 0 0 8px rgba(30, 64, 175, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .letter-box {
+    font-size: 1.5rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .instruction {
+    font-size: 1rem;
+  }
+
+  .feedback {
+    font-size: 1.1rem;
+  }
+
+  button {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+}
